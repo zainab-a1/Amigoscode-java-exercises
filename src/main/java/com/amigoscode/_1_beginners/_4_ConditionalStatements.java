@@ -14,6 +14,11 @@ public class _4_ConditionalStatements {
         // Declare an int variable called number and assign it a positive value.
 
         int number = 7;
+        if(number >0) {
+            System.out.println("Positive");
+        } else {
+            System.out.println("Not positive");
+        }
 
         // TODO: 2 - Add an else clause to the above that prints "Not positive"
         // Change the value of number to a negative value or 0 to test both branches.
@@ -26,24 +31,84 @@ public class _4_ConditionalStatements {
         // Else if score >= 70, print "Grade: C"
         // Else print "Grade: F"
 
+
         int score = 85;
+        if (score >= 90 && score <=100){
+            System.out.println("Grade:A");
+        } else if (score >= 80 && score <90)  {
+            System.out.println("Grade: B");
+        } else if (score >=70 && score <80) {
+            System.out.println("Grade: C");
+        } else {
+            System.out.println("Grade: F");
+        }
 
 
         // TODO: 4 - Write a switch statement for day of the week
         // Declare an int variable called day (1-7).
+        int day = 4;
         // Use a switch statement to print the day name:
+        switch(day){
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+            case 4:
+                System.out.println("Thursday");
+                break;
+            default:
+                System.out.println("Invalid value");
+        }
         //   1 -> "Monday", 2 -> "Tuesday", ... 7 -> "Sunday"
         // Include a default case for invalid values.
 
-        int day = 3;
 
 
         // TODO: 5 - Use a switch statement with a String
         // Declare a String variable called month (e.g., "February").
+        String month = "February";
         // Use a switch statement to print the number of days in that month.
+        switch(month){
+            case "January":
+                System.out.println(31);
+                break;
+            case "February":
+                System.out.println(29);
+                break;
+            case "March":
+                System.out.println(31);
+                break;
+            case "April":
+                System.out.println(30);
+                break;
+            case "May":
+                System.out.println(31);
+                break;
+            case "June":
+                System.out.println(30);
+                break;
+            case "July":
+                System.out.println(31);
+                break;
+            case "August":
+                System.out.println(31);
+                break;
+            case "September":
+                System.out.println(30);
+                break;
+            default:
+                System.out.println("There is no match");
+
+        }
+
         // Handle at least 3-4 months plus a default case.
 
-        String month = "February";
+
 
 
         // TODO: 6 - Use a switch expression (Java 14+) to return a value
@@ -56,6 +121,9 @@ public class _4_ConditionalStatements {
         // Print the result.
 
 
+
+
+
         // TODO: 7 - Write a nested if statement to check if a number is positive AND even
         // Declare an int variable called value.
         // First check if it is positive (> 0).
@@ -65,6 +133,17 @@ public class _4_ConditionalStatements {
         //   Else print "Not positive"
 
         int value = 8;
+        if (value>0) {
+            if (value % 2 == 0) {
+                System.out.println("Positive and even");
+            } else {
+                System.out.println("Positive and odd");
+            }
+        }
+        else {
+                System.out.println("Not positive");
+            }
+
 
     }
 }
