@@ -46,7 +46,7 @@ public class _4_ConditionalStatements {
 
         // TODO: 4 - Write a switch statement for day of the week
         // Declare an int variable called day (1-7).
-        int day = 4;
+        int day = 3;
         // Use a switch statement to print the day name:
         switch(day){
             case 1:
@@ -120,6 +120,19 @@ public class _4_ConditionalStatements {
         //   };
         // Print the result.
 
+        String dayName = switch(day) {
+            case 1 ->
+                "Monday";
+            case 2 ->
+                "Tuesday";
+            case 3 ->
+                "Wednesday";
+            case 4 ->
+                "Thursday";
+            default -> throw new IllegalStateException("Invalid day: " + day);
+
+        };
+        System.out.println(dayName);
 
 
 
