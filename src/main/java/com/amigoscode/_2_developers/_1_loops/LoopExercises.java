@@ -147,8 +147,12 @@ public class LoopExercises {
         // TODO: 6 - Use a for loop starting from the last index down to 0.
         for(int i=arr.length-1; i>=0; i--)
         {
-            sb.append(arr[i]).append(",");
 
+            sb.append(arr[i]);
+//            Check the index before appending the comma
+            if(i>0){
+                sb.append(",");
+            }
         }
         //  Append each element to sb. Add ", " between elements but not after the last one.
 
