@@ -1,5 +1,7 @@
 package com.amigoscode._2_developers._1_loops;
 
+import jdk.swing.interop.SwingInterOpUtils;
+
 /**
  * Loop Exercises
  *
@@ -19,6 +21,16 @@ public class LoopExercises {
      */
     public static void printMultiplicationTable(int n) {
         // TODO: 1 - Use nested for loops to print an n x n multiplication table.
+
+        for(int i = 1; i<= n; i++)
+        {
+            for (int j= 1; j<= n; j++){
+                System.out.print( i * j + " ");
+
+            }
+            System.out.println();
+
+        }
         //  Outer loop iterates rows 1..n, inner loop iterates columns 1..n.
         //  Print each product followed by a tab, and a newline after each row.
 
@@ -34,6 +46,18 @@ public class LoopExercises {
     public static int sumWithSkipAndStop(int n) {
         int sum = 0;
         // TODO: 2 - Loop from 1 to n. Use 'continue' to skip multiples of 3.
+        for (int i = 1; i <= n; i ++ )
+        {
+            if (i % 3 == 0) {
+                continue;
+            }
+            else {
+                sum += i;
+            }
+            if (sum + i >100){
+                break;
+            }
+        }
         //  Use 'break' to stop if sum exceeds 100. Add the current number to sum otherwise.
 
         return sum;
@@ -50,7 +74,9 @@ public class LoopExercises {
     public static String findInMatrix(int[][] matrix, int target) {
         String result = "Not found";
         // TODO: 3 - Define a label (e.g., 'search:') before the outer loop.
+
         //  Use nested loops to iterate through the matrix.
+
         //  When the target is found, set result to "Found at [row][col]" and
         //  use 'break search;' to exit both loops.
 
@@ -68,6 +94,10 @@ public class LoopExercises {
         long accumulator = 1;
         // TODO: 4 - Use a for loop from 1 to n (inclusive), multiplying accumulator
         //  by the loop variable each iteration. Return the result.
+        for(int i= 1; i<= n; i++)
+        {
+            accumulator *= i;
+        }
 
         return accumulator;
     }
@@ -86,6 +116,22 @@ public class LoopExercises {
         // TODO: 5 - Use nested loops to print a centered pyramid of stars.
         //  For each row i (0-based), print (rows - i - 1) spaces followed by (2 * i + 1) stars.
         //  Print a newline after each row.
+        for(int i=1; i<=rows; i++)
+        {
+//            print spaces
+            for(int k=1; k<=rows-i; k++)
+            {
+                System.out.print(" ");
+            }
+//
+            for(int j=1; j<=i; j++)
+            {
+
+                System.out.print("* ");
+
+            }
+            System.out.println();
+        }
 
     }
 
@@ -99,6 +145,11 @@ public class LoopExercises {
     public static String iterateBackwards(int[] arr) {
         StringBuilder sb = new StringBuilder();
         // TODO: 6 - Use a for loop starting from the last index down to 0.
+        for(int i=arr.length-1; i>=0; i--)
+        {
+            sb.append(arr[i]).append(",");
+
+        }
         //  Append each element to sb. Add ", " between elements but not after the last one.
 
         return sb.toString();
@@ -116,6 +167,16 @@ public class LoopExercises {
         int attempts = 0;
         java.util.Random random = new java.util.Random();
         // TODO: 7 - Use while(true) to create an infinite loop.
+        while(true)
+        {
+            int randomNum = (int)(Math.random()* 101);
+            if(randomNum!= target){
+               attempts++;
+            }
+            else{
+                break;
+            }
+        }
         //  Each iteration: increment attempts, generate a random int between 1 and 100,
         //  and break if it matches the target.
 
@@ -124,7 +185,7 @@ public class LoopExercises {
 
     public static void main(String[] args) {
         System.out.println("=== Multiplication Table (4x4) ===");
-        printMultiplicationTable(4);
+        printMultiplicationTable(3);
 
         System.out.println("\n=== Sum with Skip and Stop (n=50) ===");
         System.out.println("Sum: " + sumWithSkipAndStop(50));
