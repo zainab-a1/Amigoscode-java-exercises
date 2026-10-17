@@ -35,8 +35,10 @@ public class IfStatements {
     public static boolean isEligibleForLoan(int age, double income, boolean hasGuarantor) {
         // TODO: 2 - Use a single return statement with && and || operators
         //  to express the eligibility condition described above.
+        boolean isEligible = age >= 18 && income >= 30000 || hasGuarantor && age >= 16;
 
-        return false;
+
+        return isEligible;
     }
 
     /**
@@ -49,7 +51,34 @@ public class IfStatements {
     public static String getGrade(int score) {
         // TODO: 3 - Use nested ternary operators to return the correct grade.
         //  Example pattern: score >= 90 ? "A" : score >= 80 ? "B" : ...
-        return null;
+       String grade="";
+
+       if (score> 100)
+       {
+           grade= "Incorrect input";
+       }
+       if (score >=90 && score <=100)
+       {
+           grade= "A";
+       }
+       else if (score >= 80 && score <= 89)
+       {
+           grade= "B";
+       }
+
+       else if(score >=70 && score <= 79)
+       {
+           grade = "C";
+       }
+       else if (score >= 60 && score <= 69)
+       {
+           grade = "D";
+       }
+       else {
+           grade= " F";
+       }
+
+        return grade;
     }
 
     /**
@@ -62,7 +91,14 @@ public class IfStatements {
     public static int safeLength(String text) {
         // TODO: 4 - Check if text is null before calling text.length().
         //  Return -1 if text is null, otherwise return text.length().
-        return 0;
+
+        int stringLength= -1;
+
+        if(text!=null)
+        {
+            stringLength = text.length();
+        }
+        return stringLength;
     }
 
     /**
@@ -78,7 +114,22 @@ public class IfStatements {
         //  If both are null, return true.
         //  If only one is null, return false.
         //  Otherwise, use a.equals(b) — never use == for string content comparison.
-        return false;
+
+        boolean isEquals =true ;
+
+        if(a == null && b == null)
+        {
+            isEquals = true;
+        }
+        else if (a == null || b== null)
+        {
+            isEquals = false;
+        }
+        else if (a.equals(b)){
+            isEquals = true;
+        }
+      return isEquals;
+
     }
 
     /**
@@ -98,7 +149,18 @@ public class IfStatements {
         //      ...
         //      default -> "Invalid";
         //  };
-        return null;
+
+        String dayName = switch (day) {
+            case 1 -> "Monday";
+            case 2 -> "Tuesday";
+            case 3 -> "Wednesday";
+            case 4 -> "Thursday";
+            case 5 -> "Friday";
+            case 6 -> "Saturday";
+            case 7 -> "Sunday";
+            default -> "Invalid input";
+        };
+        return dayName;
     }
 
     public static void main(String[] args) {
