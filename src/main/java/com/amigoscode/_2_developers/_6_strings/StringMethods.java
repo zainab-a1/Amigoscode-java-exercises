@@ -1,5 +1,7 @@
 package com.amigoscode._2_developers._6_strings;
 
+import jdk.jshell.Snippet;
+
 /**
  * String Methods Exercises
  *
@@ -18,8 +20,9 @@ public class StringMethods {
      */
     public static String compareEquality(String a, String b) {
         // TODO: 1 - Use equals() and equalsIgnoreCase() to compare a and b.
+        a.equals(b);
         //  Return a string in the format: "equals: <result>, equalsIgnoreCase: <result>"
-        return null;
+        return "eqauls:"+ a.equals(b) + ", eqaulsIgnoreCase:" + a.equalsIgnoreCase(b);
     }
 
     /**
@@ -33,6 +36,13 @@ public class StringMethods {
     public static String compareLexicographic(String a, String b) {
         // TODO: 2 - Use a.compareTo(b) and return:
         //  "before" if result < 0, "equal" if result == 0, "after" if result > 0.
+        int result = a.compareTo(b);
+        if (result < 0)
+        {
+
+
+        }
+
         return null;
     }
 
@@ -48,7 +58,14 @@ public class StringMethods {
         // TODO: 3 - Use contains() to check if text contains keyword.
         //  Use indexOf() to find the position of keyword in text.
         //  Return "contains: <bool>, indexOf: <index>"
-        return null;
+
+
+        boolean bool =text.contains(keyword);
+        int index = keyword.indexOf(text);
+
+
+
+        return "contains: <bool>, indexOf: <index>";
     }
 
     /**

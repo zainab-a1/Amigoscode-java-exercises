@@ -2,6 +2,8 @@ package com.amigoscode._2_developers._5_methods;
 
 import java.util.Arrays;
 
+
+
 /**
  * Variable Arguments (Varargs) Exercises
  *
@@ -15,6 +17,20 @@ public class VarArgs {
     //  If no arguments are provided, return 0.
     //  Hint: use a for-each loop to iterate over 'numbers'.
 
+
+    public static void format(String prefix, int... numbers)
+    {
+        for(Integer number: numbers)
+        {
+            String res = null;
+            int num [] = new int[] {number};
+            for(int i=0; i<=num.length-1; i++){
+
+                num[i].append(res);
+            }
+        }
+        System.out.println(prefix +": [" + res +"]");
+    }
    
     public static int sum(int... numbers)
     {
@@ -116,14 +132,24 @@ public class VarArgs {
         //  Example: format("Values", 1, 2, 3) returns "Values: [1, 2, 3]"
         //  Hint: varargs must be the LAST parameter in the method signature.
         //  Then call the method and print the result here.
+        //
 
-//        String format(String prefix, int... numbers)
+//        public static void format(String prefix, int... numbers)
 //        {
 //            for(Integer number: numbers)
 //            {
+//                String res = null;
+//                int num [] = new int[] {number};
+//                for(int i=0; i<=num.length-1; i++){
 //
+//                    num[i].append(res);
+//                }
 //            }
+//            System.out.println(prefix +": [" + res +"]");
 //        }
+
+
+       format("Values", 1, 2, 3);
 
 
 
