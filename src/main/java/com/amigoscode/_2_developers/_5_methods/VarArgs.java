@@ -18,19 +18,7 @@ public class VarArgs {
     //  Hint: use a for-each loop to iterate over 'numbers'.
 
 
-    public static void format(String prefix, int... numbers)
-    {
-        for(Integer number: numbers)
-        {
-            String res = null;
-            int num [] = new int[] {number};
-            for(int i=0; i<=num.length-1; i++){
 
-                num[i].append(res);
-            }
-        }
-        System.out.println(prefix +": [" + res +"]");
-    }
    
     public static int sum(int... numbers)
     {
