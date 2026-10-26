@@ -2,6 +2,7 @@ package com.amigoscode._2_developers._5_methods;
 
 import java.util.Arrays;
 
+import static java.lang.String.format;
 
 
 /**
@@ -17,9 +18,20 @@ public class VarArgs {
     //  If no arguments are provided, return 0.
     //  Hint: use a for-each loop to iterate over 'numbers'.
 
+//    Q6:
+public static String format(String prefix, int... numbers)
+{
+    String result = "";
+    for (int i = 0; i < numbers.length; i++) {
+        result = result + numbers[i];
+        if (i < numbers.length - 1) {
+            result = result + ", ";
+        }
+    }
+    return prefix + ": [" + result + "]";
+}
 
 
-   
     public static int sum(int... numbers)
     {
         int sum = 0;
@@ -122,22 +134,9 @@ public class VarArgs {
         //  Then call the method and print the result here.
         //
 
-//        public static void format(String prefix, int... numbers)
-//        {
-//            for(Integer number: numbers)
-//            {
-//                String res = null;
-//                int num [] = new int[] {number};
-//                for(int i=0; i<=num.length-1; i++){
-//
-//                    num[i].append(res);
-//                }
-//            }
-//            System.out.println(prefix +": [" + res +"]");
-//        }
 
 
-       format("Values", 1, 2, 3);
+        System.out.println(format("Values", 1, 2, 3));
 
 
 
