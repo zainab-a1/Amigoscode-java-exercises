@@ -121,7 +121,7 @@ public class DateExercises {
         // TODO: 7 - Create a DateTimeFormatter with the pattern "dd-MM-yyyy".
         //  Use LocalDate.parse(dateString, formatter) to parse the string.
         //  Return the resulting LocalDate.
-        DateTimeFormatter formatter =DateTimeFormatter.ofPattern("dd-MM-yyy");
+        DateTimeFormatter formatter =DateTimeFormatter.ofPattern("dd-MM-yyyy");
         LocalDate lc=LocalDate.parse(dateString, formatter);
 
         return lc ;
