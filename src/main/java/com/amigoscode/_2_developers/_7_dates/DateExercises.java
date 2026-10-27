@@ -32,7 +32,7 @@ public class DateExercises {
      */
     public static LocalDate getIndependenceDay() {
         // TODO: 2 - Use LocalDate.of(year, month, day) to create and return July 4, 1776.
-        LocalDate localDateOne =LocalDate.of(1777,7,4 );
+        LocalDate localDateOne =LocalDate.of(1776,7,4 );
 
         return localDateOne;
     }
@@ -63,7 +63,7 @@ public class DateExercises {
         //  Remember: LocalDate is immutable, so each method returns a NEW LocalDate.
         //  Chain the calls or apply them sequentially.
 
-        LocalDate localDays =LocalDate.now().plusDays(days).plusMonths(months).plusYears(years);
+        LocalDate localDays =LocalDate.from(date).plusDays(days).plusMonths(months).plusYears(years);
 
 
         return localDays;
@@ -84,7 +84,7 @@ public class DateExercises {
         {
             result = "before";
         } else if (date1.isAfter(date2)) {
-            result = " after";
+            result = "after";
 
         }
         else {
@@ -117,15 +117,15 @@ public class DateExercises {
      * @param dateString the date string in "dd-MM-yyyy" format
      * @return the parsed LocalDate
      */
-//    public static LocalDate parseDate(String dateString) {
-//        // TODO: 7 - Create a DateTimeFormatter with the pattern "dd-MM-yyyy".
-//        //  Use LocalDate.parse(dateString, formatter) to parse the string.
-//        //  Return the resulting LocalDate.
-//        DateTimeFormatter formatter =DateTimeFormatter.ofPattern(dateString);
-//        LocalDate lc=LocalDate.parse(dateString, formatter);
-//
-//        return lc ;
-//    }
+    public static LocalDate parseDate(String dateString) {
+        // TODO: 7 - Create a DateTimeFormatter with the pattern "dd-MM-yyyy".
+        //  Use LocalDate.parse(dateString, formatter) to parse the string.
+        //  Return the resulting LocalDate.
+        DateTimeFormatter formatter =DateTimeFormatter.ofPattern("dd-MM-yyy");
+        LocalDate lc=LocalDate.parse(dateString, formatter);
+
+        return lc ;
+    }
 
     public static void main(String[] args) {
         System.out.println("=== Today's Date ===");
