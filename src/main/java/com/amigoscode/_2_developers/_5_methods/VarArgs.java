@@ -22,6 +22,7 @@ public class VarArgs {
 public static String format(String prefix, int... numbers)
 {
     String result = "";
+
     for (int i = 0; i < numbers.length; i++) {
         result = result + numbers[i];
         if (i < numbers.length - 1) {
@@ -108,8 +109,6 @@ public static String format(String prefix, int... numbers)
         System.out.println(sum);
 
 
-
-
         System.out.println("\n=== Concatenate ===");
         // Print: concatenate("Java", "is", "awesome")
         String result=concatenate("Java", "is", "awesome");
@@ -132,9 +131,6 @@ public static String format(String prefix, int... numbers)
         //  Example: format("Values", 1, 2, 3) returns "Values: [1, 2, 3]"
         //  Hint: varargs must be the LAST parameter in the method signature.
         //  Then call the method and print the result here.
-        //
-
-
 
         System.out.println(format("Values", 1, 2, 3));
 

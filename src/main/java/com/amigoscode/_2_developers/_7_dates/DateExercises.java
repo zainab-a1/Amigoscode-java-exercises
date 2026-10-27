@@ -20,7 +20,9 @@ public class DateExercises {
      */
     public static LocalDate getToday() {
         // TODO: 1 - Use LocalDate.now() to get and return today's date.
-        return null;
+        LocalDate localDate =LocalDate.now();
+
+        return localDate;
     }
 
     /**
@@ -30,7 +32,9 @@ public class DateExercises {
      */
     public static LocalDate getIndependenceDay() {
         // TODO: 2 - Use LocalDate.of(year, month, day) to create and return July 4, 1776.
-        return null;
+        LocalDate localDateOne =LocalDate.of(1777,7,4 );
+
+        return localDateOne;
     }
 
     /**
@@ -40,7 +44,9 @@ public class DateExercises {
      */
     public static LocalDateTime getCurrentDateTime() {
         // TODO: 3 - Use LocalDateTime.now() to get and return the current date and time.
-        return null;
+        LocalDateTime local  =LocalDateTime.now();
+
+        return local;
     }
 
     /**
@@ -56,7 +62,11 @@ public class DateExercises {
         // TODO: 4 - Use plusDays(), plusMonths(), and plusYears() on the date.
         //  Remember: LocalDate is immutable, so each method returns a NEW LocalDate.
         //  Chain the calls or apply them sequentially.
-        return null;
+
+        LocalDate localDays =LocalDate.now().plusDays(days).plusMonths(months).plusYears(years);
+
+
+        return localDays;
     }
 
     /**
@@ -69,7 +79,18 @@ public class DateExercises {
     public static String compareDates(LocalDate date1, LocalDate date2) {
         // TODO: 5 - Use isBefore() and isAfter() methods on date1 to compare with date2.
         //  Return "before", "after", or "equal".
-        return null;
+        String result = "";
+        if(date1.isBefore(date2))
+        {
+            result = "before";
+        } else if (date1.isAfter(date2)) {
+            result = " after";
+
+        }
+        else {
+            result = "equal";
+        }
+        return result;
     }
 
     /**
@@ -84,7 +105,9 @@ public class DateExercises {
         // TODO: 6 - Create a DateTimeFormatter using DateTimeFormatter.ofPattern(pattern).
         //  Use date.format(formatter) to format the date.
         //  Return the formatted string.
-        return null;
+        DateTimeFormatter formatter =DateTimeFormatter.ofPattern(pattern);
+        String result =date.format(formatter).toString();
+        return result;
     }
 
     /**
@@ -94,12 +117,15 @@ public class DateExercises {
      * @param dateString the date string in "dd-MM-yyyy" format
      * @return the parsed LocalDate
      */
-    public static LocalDate parseDate(String dateString) {
-        // TODO: 7 - Create a DateTimeFormatter with the pattern "dd-MM-yyyy".
-        //  Use LocalDate.parse(dateString, formatter) to parse the string.
-        //  Return the resulting LocalDate.
-        return null;
-    }
+//    public static LocalDate parseDate(String dateString) {
+//        // TODO: 7 - Create a DateTimeFormatter with the pattern "dd-MM-yyyy".
+//        //  Use LocalDate.parse(dateString, formatter) to parse the string.
+//        //  Return the resulting LocalDate.
+//        DateTimeFormatter formatter =DateTimeFormatter.ofPattern(dateString);
+//        LocalDate lc=LocalDate.parse(dateString, formatter);
+//
+//        return lc ;
+//    }
 
     public static void main(String[] args) {
         System.out.println("=== Today's Date ===");
