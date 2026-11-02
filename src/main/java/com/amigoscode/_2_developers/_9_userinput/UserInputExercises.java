@@ -1,7 +1,11 @@
 package com.amigoscode._2_developers._9_userinput;
 
+import com.sun.source.tree.WhileLoopTree;
+
+import java.sql.SQLOutput;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
 /**
  * User Input Exercises
@@ -20,7 +24,10 @@ public class UserInputExercises {
     public static String readString(Scanner scanner) {
         // TODO: 1 - Prompt the user with "Enter your name: " (use System.out.print).
         //  Read a full line using scanner.nextLine() and return it.
-        return null;
+        System.out.println("Enter your name: ");
+        String name =scanner.nextLine();
+
+        return name;
     }
 
     /**
@@ -38,7 +45,19 @@ public class UserInputExercises {
         //    catch InputMismatchException, print "Invalid input!", and return -1.
         //  Don't forget to consume the leftover newline with scanner.nextLine()
         //  after reading the int (both in success and failure cases).
-        return 0;
+
+        System.out.println("Enter a number: ");
+        int number= -1;
+        try {
+             number =scanner.nextInt();
+            scanner.nextLine();
+        }
+        catch ( InputMismatchException e)
+        {
+            scanner.nextLine();
+            System.out.println("Invalid input!");
+        }
+        return number ;
     }
 
     /**
@@ -53,6 +72,25 @@ public class UserInputExercises {
         //  Read a line with scanner.nextLine().
         //  If the line equals "quit" (case-insensitive), break out of the loop.
         //  Otherwise, print "You entered: " followed by the input.
+
+        System.out.println("Enter text (or 'quit' to stop): ");
+        String input =scanner.nextLine();
+
+        while(true)
+        {
+            if(input.equalsIgnoreCase("quit"))
+            {
+                return;
+
+            }
+            else
+            {
+                System.out.println("You entered: "+input);
+            }
+
+            System.out.println("Enter text (or 'quit' to stop): ");
+            input =scanner.nextLine();
+        }
 
     }
 
@@ -75,7 +113,8 @@ public class UserInputExercises {
      */
     public static boolean isValidEmail(String email) {
         // TODO: 5 - Return true if email is not null and contains "@", false otherwise.
-        return false;
+        boolean isValid = email.contains("@");
+        return isValid;
     }
 
     /**
@@ -93,6 +132,39 @@ public class UserInputExercises {
         //  4. Print a summary: "Registration complete!"
         //     "Name: ...", "Age: ...", "Email: ..."
 
+        String email ="";
+        String name="";
+        int age = 0;
+        while(true) {
+            System.out.println("Enter your name: ");
+            name = scanner.nextLine();
+
+            if (name.isEmpty()) {
+                System.out.println("Enter your name: ");
+                name = scanner.nextLine();
+            }
+            try {
+                System.out.println("Enter your age: ");
+                age = scanner.nextInt();
+                scanner.nextLine();
+                if (isValidAge(age)) {
+                    age = age;
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Wrong input");
+                break;
+            }
+            System.out.println("Enter your email: ");
+
+            email = scanner.nextLine();
+            if (!isValidEmail(email)) {
+                System.out.println("Wrong email entered");
+                break;
+            }
+            System.out.println("Registration complete!");
+            System.out.println("Name: " + name + " Age: "+ age + " Email: " + email);
+            return;
+        }
     }
 
     public static void main(String[] args) {
